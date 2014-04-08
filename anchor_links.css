@@ -1,1 +1,6 @@
 /* Hello */
+
+.anchor-link-target {
+  color: green;
+  font-weight: bold;
+}
