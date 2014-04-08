@@ -1,6 +1,8 @@
 /* Hello */
 
-.anchor-link-target {
+.anchor-link-target:before {
   color: green;
-  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  content: 'h';
 }
