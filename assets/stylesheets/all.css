@@ -1,8 +1,8 @@
-/* Hello */
+.anchor-link {
+  position: absolute;
+  margin-left: -1em;
+}
 
-.anchor-link-target:before {
-  color: green;
-  text-decoration: underline;
-  cursor: pointer;
-  content: 'h';
+.anchor-link:before {
+  content: url('chrome-extension://__MSG_@@extension_id__/assets/images/link.jpg');
 }
