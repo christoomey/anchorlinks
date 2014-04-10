@@ -3,14 +3,11 @@
   "version": "0.1",
   "manifest_version": 2,
   "description": "Copy anchored links to your clipboard",
-  "web_accessible_resources": [
-    "assets/images/*"
-  ],
   "content_scripts": [
     {
+			"run_at": "document_end",
       "matches": ["<all_urls>"],
-      "css": ["assets/stylesheets/all.css"],
-      "js": ["vendor/jquery.js", "assets/javascripts/all.js"]
+      "js": ["assets/javascripts/all.js"]
     }
   ]
 }
