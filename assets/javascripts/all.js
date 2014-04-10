@@ -1,5 +1,8 @@
 $(function() {
   var linksDisplaying = false;
+  var hotkeyCountThreshold = 2;
+  var hotkeyCounter = 0;
+  var hotkeyClearId = null;
   var anchoredElements = $('*[id]');
 
   var attachLink = function(element) {
@@ -32,9 +35,24 @@ $(function() {
     }
   }
 
-  $(document).on('keydown', function(event) {
-    if (event.metaKey && event.ctrlKey && event.shiftKey) {
+  var resetHotkeyCounter = function() {
+    hotkeyCounter = 0;
+  }
+
+  var incrementHotkeyCounter = function() {
+    hotkeyCounter++;
+    if (hotkeyCounter >= hotkeyCountThreshold) {
       toggleLinks();
+      resetHotkeyCounter();
+    } else {
+      clearTimeout(hotkeyClearId);
+      hotkeyClearId = setTimeout(resetHotkeyCounter, 200);
+    }
+  }
+
+  $(document).on('keydown', function(event) {
+    if (event.keyCode === 17 && !event.shiftKey && !event.metaKey ) {
+      incrementHotkeyCounter();
     }
   });
 })
