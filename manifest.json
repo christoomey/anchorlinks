@@ -12,5 +12,9 @@
       "css": ["assets/stylesheets/all.css"],
       "js": ["vendor/jquery.js", "assets/javascripts/all.js"]
     }
-  ]
+  ],
+  "icons": {
+    "48": "assets/images/link-48.png",
+    "128": "assets/images/link-128.png"
+  }
 }
